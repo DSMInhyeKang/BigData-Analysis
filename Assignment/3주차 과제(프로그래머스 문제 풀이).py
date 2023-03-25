@@ -63,3 +63,31 @@ def solution(letter):
     } # 딕셔너리(dict)
     
     return ''.join(morse[i] for i in letter.split(' '))
+
+
+
+### 4주차 수업
+
+## 중복된 문자 제거(120888) https://school.programmers.co.kr/learn/courses/30/lessons/120888
+
+def solution(my_string):
+    return ''.join(dict.fromkeys(my_string))
+
+
+## 2차원으로 만들기(120842) https://school.programmers.co.kr/learn/courses/30/lessons/120842
+
+import numpy as np
+
+def solution(num_list, n):
+    return np.array(num_list).reshape(len(num_list)//n, n).tolist()
+
+
+## 행렬의 덧셈(12950) https://school.programmers.co.kr/learn/courses/30/lessons/12950
+
+import numpy as np
+
+def solution(arr1, arr2):
+    a = np.array(arr1)
+    b = np.array(arr2)
+            
+    return (a+b).tolist() #ndarray >> list (리스트는 덧셈이 아니라 그냥 이어지므로 ndarray로 계산해야함)
