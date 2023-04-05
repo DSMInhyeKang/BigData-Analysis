@@ -96,7 +96,7 @@ def solution(arr1, arr2):
 ## 숨어있는 숫자의 덧셈(2)(120864) #https://school.programmers.co.kr/learn/courses/30/lessons/120864?language=python3
 
 def solution(my_string):
-    my_string = "".join([word if word.isnumeric() else ' ' for word in list(my_string)])
+    my_string = ''.join([word if word.isnumeric() else ' ' for word in list(my_string)])
     numList = list(map(int, my_string.split()))
     
     return sum(numList)
