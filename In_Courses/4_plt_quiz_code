@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+a = np.arange(0, 10, 1)
+
+plt.plot(a, -a, marker="d", markersize=10, linestyle='-.', color='blue', label='-n')
+plt.plot(a, 2*a, marker="p", markersize=13, linestyle='--', color='red', label='2n')
+plt.plot(a, a**2, marker="*", markersize=16, linestyle=':', color='green', label='n**2')
+plt.legend()
+
+plt.grid(True, axis='x', alpha=0.5, color='gray')
+plt.xticks(a)
+plt.tick_params(axis='x', direction='out', length=6, width=2)
+
+plt.title("plt_quiz", loc='center', pad=30)
+plt.xlabel("xxx label", fontdict={'family':'serif', 'color':'pink', 'weight':'bold', 'size':'10'}, labelpad=15)
+plt.ylabel("yyy label", fontdict={'family':'fantasy', 'color':'gray', 'weight':'light', 'size':'15'}, labelpad=15)
+
+plt.show()
+
+plt.plot
+
