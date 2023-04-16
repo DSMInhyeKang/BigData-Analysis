@@ -1,0 +1,63 @@
+import numpy as np
+import pandas as pd
+import matplotlib as plt
+
+s1 = pd.Series([1,2,3,4,5])
+s2 = pd.Series ({'a': '1', 'b': 2.344, 'c': 'hello'})
+
+df = pd.DataFrame(
+    {
+        "Name": [
+            "Bigdata Jwa",
+            "Web Kim",
+            "Project Seo"
+        ],
+        "Age": [17, 18, 19], 
+        "Grade": [2, 3, 3]
+    },
+    index = ['A', 'B', 'C']
+)
+
+df["Name"] #df.Name
+
+df.describe()
+
+df.Name.unique() #중복 없이 값 가져오기
+
+
+cali_house = pd.read_csv(r"/content/sample_data/california_housing_test.csv")
+cali_house
+
+cali_house.head()
+cali_house.tail()
+cali_house.info()
+cali_house.describe()
+cali_house.shape
+
+pd.get_option('max_row')
+
+cali_house["housing_median_age"]
+cali_house.housing_median_age
+
+cali_house["population"].iloc[20:60]
+
+median = ["median_income", "median_house_value"]
+cali_house[median]
+
+condition = cali_house["housing_median_age"] < 5
+below_5_cnt = cali_house[condition]
+above_30_cnt = cali_house["total_rooms"] > 30
+cali_house[condition & above_30_cnt]
+
+print(cali_house.total_rooms)
+print(cali_house['total_rooms']) #good
+print(cali_house.loc[:, 'total_rooms'])
+
+cali_house.iloc[5:151:2, 0:3] #[index, column]
+
+dates = pd.date_range("20230414", periods=30)
+
+list("ABCD")+['E']
+dataF = pd.DataFrame(np.random.randn(30, 4), index=dates, columns=list('ABCD'))
+df2 = df.reindex(index=dates[0:5], columns=list(dataF.columns) + ['E'])
+df2.loc[dates[0] : dates[1], "E"] = 7
